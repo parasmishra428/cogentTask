@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$date1 = "2021-07-1";
+$date2 = "2021-07-29";
+
+function calcDays($date1, $date2)
+{
+	echo "Heloo this is me....";
+    $date1_ts = strtotime($date1);
+    $date2_ts = strtotime($date2);
+    $diff = $date2_ts - $date1_ts;
+    echo $diff;
+    print "</br>";
+    return ($diff / 86400);
+}
+
+$days = calcDays($date1, $date2);
+
+printf("days between 2 days is : " . $days . " Days ");
+print "</br>";
+?>
+
+</body>
+</html>
+
+
+
+//qns no 2
+
+
+
+<?php
+    // input start and end date
+    $startDate = "01-01-2019";
+    $endDate = "01-01-2020";
+      
+    $resultDays = array('Monday' => 0,
+    'Tuesday' => 0,
+    'Wednesday' => 0,
+    'Thursday' => 0,
+    'Friday' => 0,
+    'Saturday' => 0,
+    'Sunday' => 0);
+  
+    // change string to date time object
+    $startDate = new DateTime($startDate);
+    $endDate = new DateTime($endDate);
+  
+    // iterate over start to end date
+    while($startDate <= $endDate ){
+        // find the timestamp value of start date
+        $timestamp = strtotime($startDate->format('d-m-Y'));
+  
+        // find out the day for timestamp and increase particular day
+        $weekDay = date('l', $timestamp);
+        $resultDays[$weekDay] = $resultDays[$weekDay] + 1;
+  
+        // increase startDate by 1
+        $startDate->modify('+1 day');
+    }
+  
+    // print the result
+    print_r($resultDays);
+?>
+
+
+
+//qns3
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$date1 = "2021-07-1";
+$date2 = "2020-07-29";
+
+function calcDays($date1, $date2)
+{
+	echo "Heloo this is me....";
+    print "</br>";print "</br>";
+    $date1_ts = strtotime($date1);
+    $date2_ts = strtotime($date2);
+    $diff = $date2_ts - $date1_ts;
+    echo $diff;
+    
+          // 1 day = 24 hours
+      // 24 * 60 * 60 = 86400 seconds
+      //1 week = 86400*7= 604800
+      
+    $week =  abs(round($diff / 604800));
+    echo "Total week is".$week;
+      
+    print "</br>";
+    
+    return ($diff / 86400);
+    
+}
+
+$days = calcDays($date1, $date2);
+
+printf("days between 2 days is : " . $days . " Days ");
+print "</br>";
+?>
+
+</body>
+</html>
