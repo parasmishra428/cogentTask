@@ -109,3 +109,108 @@ print "</br>";
 
 </body>
 </html>
+
+
+
+qns no 4)
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+function calcDays($date1, $date2)
+{
+	echo "Heloo this is me....";
+    Print "</br>";
+    $date1 = "2014-02-10 05:14:26 AM";
+	$date2 = "2014-02-11 07:17:27 AM";
+    $d1 = strtotime($date1);
+    $d2 = strtotime($date2);
+
+	$diff = $d2-$d1;
+    echo "date difference".$diff;
+
+
+
+	$hours = floor($diff / 3600);
+	$minutes = floor(($diff % 3600) / 60);
+	$sec = $diff % 60;
+    echo "</br>";
+    
+    //echo $diff;
+    
+    print "</br>";
+    echo "Total Hours is".$hours;
+    print "</br>";
+    echo "Total minutes is".$minutes;
+    print "</br>";
+    echo "second is".$sec;
+     print "</br>";
+      print "</br>";
+    
+
+}
+
+$days = calcDays($date1, $date2);
+
+printf("days between 2 days is : " . $days . " Days ");
+print "</br>";
+          // 1 day = 24 hours
+      // 24 * 60 * 60 = 86400 seconds
+      //1 week = 86400*7= 604800
+      
+
+?>
+
+</body>
+</html>
+
+
+
+qns 5)
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="welcome.php" method="post">
+Time zone: <input type="text" name="timezone" placeholder= "Enter timezone" id= "tz"><br>
+
+<input type="submit">
+</form>
+
+
+
+<?php
+ date_default_timezone_set('America/Los_Angeles');
+//echo "hey".$a;
+echo date('d-m-Y H:i:s');
+echo "</br>";
+
+
+  date_default_timezone_set($currentTimeZone);
+  echo date('d-m-Y H:i:s');
+  //$usertimezone="Asia/Shanghai"; 
+
+  echo "</br>";
+  echo "</br>";
+ // echo $tz1;
+
+//date_default_timezone_set('"'.$usertimezone.'"'); 
+
+echo "</br>";
+if (date_default_timezone_get()) {
+    echo 'Timezone is: ' . date_default_timezone_get();
+    echo "</br>";
+     echo date('d-m-Y H:i:s');
+}
+echo "</br>";
+
+
+  
+?>
+
+
+</body>
+</html>
